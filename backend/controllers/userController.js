@@ -15,7 +15,6 @@ const authUser = asyncHandler(async(req,res) =>{
             _id: user._id,
             name: user.name,
             email: user.email,
-            isAdmin: user.isAdmin,
             token: generateToken(user._id),
         })
     }else{
@@ -48,7 +47,6 @@ const registerUser = asyncHandler(async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
-      isAdmin: user.isAdmin,
       token: generateToken(user._id),
     })
   } else {
@@ -57,16 +55,8 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 })
 
-// @desc    Get all users
-// @route   GET /api/users
-// @access  Private/Admin
-const getUsers = asyncHandler(async (req, res) => {
-  const users = await User.find({})
-  res.json(users)
-})
 
 export {
   authUser,
   registerUser,
-  getUsers
 }
