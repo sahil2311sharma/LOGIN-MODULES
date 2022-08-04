@@ -1,3 +1,3 @@
-# DigiSet
+# STRIPE
 
 ## To Start the project write the command ->    npm run dev
